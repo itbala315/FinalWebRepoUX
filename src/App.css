@@ -6,18 +6,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: linear-gradient(79deg, #7439db, #C66FBC 48%, #F7944D);
+  background: #6244bb!important;
 }
 
-.App {
- /* text-align: center;*/
-  display: flex;
-  min-height: 100vh;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  background-image: linear-gradient(79deg, #7439db, #C66FBC 48%, #F7944D);
-}
+
 
 .auth-form-container,
 .login-form,

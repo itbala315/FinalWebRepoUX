@@ -40,7 +40,10 @@ const FileUpload = () => {
         setFileNames(prevFileNames => [...prevFileNames, ...names]);
     };
 
-
+    const resetForm = () => {
+        setTextInput(""); // Reset the text input
+        setFileNames(["", "", ""]); // Reset the file input names
+      };
 
     const handleSubmit = () => {
         // Handle file submission logic (e.g., send files to server)
@@ -82,64 +85,70 @@ const FileUpload = () => {
 
     return (
         <div className="container mt-4 mb-3">
-            <div className="text-center">
-                <h2>Enter information</h2>
+ 
+        <div className="row justify-content-center mt-4">
+          <div className="col-md-6">
+            <div className="card">
+            <div className="card-header bg-light text-center text-black">
+                <h2 className="fw-bold">Enter information</h2>
             </div>
-            <div className="row justify-content-center mt-4">
-                <div className="col-md-6">
-                    <div className="mb-3 row">
-                        <label className="form-label fw-bold col-3">Patient name:</label>
-                        <div className="col-8">
-                            <input
-                                type="text"
-                                className="form-control"
-                                value={textInput}
-                                onChange={handleTextChange}
-                            />
-                        </div>
-                    </div>
-                    <div className="mb-3 row">
-                        <label className="form-label fw-bold col-3">File 1 (.mat):</label>
-                        <div className="col-8">
-                            <input
-                                type="file"
-                                className="form-control"
-                                onChange={(e) => handleFileChange(e, 0)}
-                            />
-                        </div>
-                    </div>
-                    <div className="mb-3 row">
-                        <label className="form-label fw-bold col-3">File 2 (.hea):</label>
-                        <div className="col-8">
-                            <input
-                                type="file"
-                                className="form-control"
-                                onChange={(e) => handleFileChange(e, 1)}
-                            />
-                        </div>
-                    </div>
-                    <div className="mb-3 row">
-                        <label className="form-label fw-bold col-3">File 3 (.txt):</label>
-                        <div className="col-8">
-                            <input
-                                type="file"
-                                className="form-control"
-                                onChange={(e) => handleFileChange(e, 2)}
-                            />
-                        </div>
-                    </div>
-                    
-                    <div className="text-center">
-                        <button
-                            className="btn btn-primary btn-lg col-4"
-                            onClick={handleSubmit}
-                        >
-                            Submit
-                        </button>
-                    </div>
+              <div className="card-body">
+                <div className="mb-3 row">
+                  <label className="form-label fw-bold col-3">Patient name:</label>
+                  <div className="col-8">
+                    <input
+                      type="text"
+                      className="form-control"
+                      value={textInput}
+                      onChange={handleTextChange}
+                    />
+                  </div>
                 </div>
+                <div className="mb-3 row">
+                  <label className="form-label fw-bold col-3">File 1 (.mat):</label>
+                  <div className="col-8">
+                    <input
+                      type="file"
+                      className="form-control"
+                      onChange={(e) => handleFileChange(e, 0)}
+                    />
+                  </div>
+                </div>
+                <div className="mb-3 row">
+                  <label className="form-label fw-bold col-3">File 2 (.hea):</label>
+                  <div className="col-8">
+                    <input
+                      type="file"
+                      className="form-control"
+                      onChange={(e) => handleFileChange(e, 1)}
+                    />
+                  </div>
+                </div>
+                <div className="mb-3 row">
+                  <label className="form-label fw-bold col-3">File 3 (.txt):</label>
+                  <div className="col-8">
+                    <input
+                      type="file"
+                      className="form-control"
+                      onChange={(e) => handleFileChange(e, 2)}
+                    />
+                  </div>
+                </div>
+                <div className="text-center">
+                  <button
+                    className="btn btn-primary btn-md col-4 "
+                    style={{ marginRight: '8px' }} 
+                    onClick={handleSubmit}
+                  >
+                    Submit
+                  </button>
+                  <button  className="btn btn-secondary btn-md col-4" onClick={resetForm}>Reset</button>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     );
 };
 

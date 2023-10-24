@@ -28,8 +28,12 @@ const Login = () => {
       <div className="row justify-content-center">
         <div className="col-md-6">
           <div className="card mt-5">
+            <div
+              class="card-header text-center bg-light text-black"
+            >
+             <h2 className="fw-bold">Login</h2>
+            </div>
             <div className="card-body">
-              <h2 className="card-title text-center">Login</h2>
               <form onSubmit={handleSubmit}>
                 <div className="form-group">
                   <label className="text-left" htmlFor="email">
@@ -60,7 +64,10 @@ const Login = () => {
                   />
                 </div>
                 <div className="text-center mt-4">
-                  <button type="submit" className="btn btn-primary btn-lg col-4">
+                  <button
+                    type="submit"
+                    className="btn btn-primary btn-lg col-4"
+                  >
                     Login
                   </button>
                 </div>
