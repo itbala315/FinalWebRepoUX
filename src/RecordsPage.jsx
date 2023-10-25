@@ -25,9 +25,9 @@ const RecordsPage = () => {
 
     return (
         <div className="container mt-4">
-        <h1 className="text-center mb-2">Records</h1>
+        <h1 className="text-center mb-2" style={{ color: "white" }}>Records</h1>
         <div className="text-end mt-3 mb-3">
-            <button className="btn btn-primary" onClick={returnTohome}>
+            <button className="btn btn-primary btn-lg" onClick={returnTohome}>
                 Return to home
             </button>
         </div>
@@ -35,8 +35,8 @@ const RecordsPage = () => {
             {records.map((record) => (
                 <div key={record.id} className="col-md-4 mb-4">
                     <div className="card">
+                    <div className="card-header bg-light text-left text-black fw-bold ">{record.patientName}</div>
                         <div className="card-body">
-                            <h4 className="card-title border-bottom pb-2">{record.patientName}</h4>
                             <p className="card-text">
                                 {JSON.stringify(record.data?.message?.split("\n")[0]).replace(/^"(.*)"$/, "$1")}
                             </p>
