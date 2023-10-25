@@ -129,8 +129,9 @@ button {
 
 /* Resize the logo */
 .logo {
-  width: 60px; /* Adjust the width as needed */
+  width: 200px; /* Adjust the width as needed */
   height: auto; /* Maintain aspect ratio */
-  border-radius: 50%; /* Makes the image circular */
   overflow: hidden; 
+
+
 }
